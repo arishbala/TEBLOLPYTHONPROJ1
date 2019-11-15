@@ -1,17 +1,17 @@
 #Teb Python Corpus Project
 
+import io
 import nltk
 
 from nltk.corpus import wordnet
 
-nltk.download ('wordnet')
+nltk.download('wordnet')
 
-import io 
 
 def main():
     _file = input ("Enter the file name for the words/synonyms you want to find")
-    read = open (_file, 'r')
-    real _ file = read.read()
+    read = open (_file,'r')
+    real_file = read.read()
     #print (real_file)
     count = 0
     _word = input ("Enter the word that you want to search or find")
@@ -31,7 +31,8 @@ def main():
                     if i.name() == _word:
                         break 
                     else:
-                        if x ==_word:
+                        if x == _word:
                             count += 1
                             continue
-                        print ("Your corpus has listed", count,"of the word", _word, "and it's synonyms")       
+                        print ("Your corpus has listed", count,"of the word", _word, "and it's synonyms")   
+main()    
