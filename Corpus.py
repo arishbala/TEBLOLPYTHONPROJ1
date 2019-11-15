@@ -9,12 +9,12 @@ nltk.download('wordnet')
 
 
 def main():
-    _file = input ("Enter the file name for the words/synonyms you want to find")
+    _file = input ("Enter the file name for the words/synonyms you want to find: ")
     read = open (_file,'r')
     real_file = read.read()
     #print (real_file)
     count = 0
-    _word = input ("Enter the word that you want to search or find")
+    _word = input ("Enter the word that you want to search or find: ")
     new_corp = nltk.WordPunctTokenizer().tokenize(real_file)
     #_pos = nltk.pos_tag(nltk.word_tokenize(_word))
     #print (_pos)
