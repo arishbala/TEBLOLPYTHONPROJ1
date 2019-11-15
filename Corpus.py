@@ -1,9 +1,11 @@
 #Teb Python Corpus Project
 
+import string
 import io
 import nltk
 
 from nltk.corpus import wordnet
+import re
 
 nltk.download('wordnet')
 
@@ -34,5 +36,22 @@ def main():
                         if x == _word:
                             count += 1
                             continue
-                        print ("Your corpus has listed", count,"of the word", _word, "and it's synonyms")   
+                        print ("Your corpus has listed", count,"of the word", _word, "and it's synonyms") 
+
+                        import re
+
+
+frequency = {}
+document_text = open('test.txt', 'r')
+text_string = document_text.read().lower()
+match_pattern = re.findall(r'\b[a-z]{3,15}\b', text_string)
+
+for word in match_pattern:
+    count = frequency.get(word, 0)
+    frequency[word] = count + 1
+
+frequency_list = frequency.keys()
+
+for words in frequency_list:
+    print(words, frequency[words])
 main()    
